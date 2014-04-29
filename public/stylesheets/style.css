@@ -1,0 +1,108 @@
+body {
+  background-color: #E8E8E8;
+  text-align: center;
+}
+
+.container-fluid{
+  background: -moz-linear-gradient(top, #a90329 0%, #8f0222 44%, #6d0019 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a90329), color-stop(44%,#8f0222), color-stop(100%,#6d0019));
+  background: -webkit-linear-gradient(top, #a90329 0%,#8f0222 44%,#6d0019 100%);
+  background: -o-linear-gradient(top, #a90329 0%,#8f0222 44%,#6d0019 100%);
+  background: -ms-linear-gradient(top, #a90329 0%,#8f0222 44%,#6d0019 100%);
+  background: linear-gradient(to bottom, #a90329 0%,#8f0222 44%,#6d0019 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 );
+  color:#999;
+  box-shadow: 5px 5px 10px #888888;
+}
+.navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {
+  color:white;
+}
+.navbar-default .navbar-brand{
+  font-size: 2em;
+}
+#nav a{
+  color:#FFF;
+  text-decoration: none;
+}
+#nav a:hover, a:hover {
+  color:#D4D4D4;
+}
+#container{
+  margin: 0 auto;
+  color:black;
+  height:500px;
+}
+
+.card{
+  padding: 20px;
+  margin: 15px 10px;
+  background-color: white;
+  color:black;
+  width:25%;
+  box-shadow: 5px 5px 10px #888888;
+  display: inline-block;
+  height:450px;
+  overflow: scroll;
+}
+.card-header{
+  padding:5px 0 50px 0;
+}
+.card .title{
+  color:#a90329;
+  text-align:center;
+  padding: 5px;
+}
+input[type="text"], .form-group textarea {
+  margin-bottom: 5px;
+  background-color:#fafafa;
+}
+.form-group textarea:focus, input[type="text"]:focus{
+  margin-bottom: 5px;
+  background-color:#fafafa;
+  border-color: rgba(169, 3, 41, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(169, 3, 41, 0.6);
+  outline: 0 none;
+  }
+a {
+  color: #a90329;
+}
+hr {
+  -moz-border-bottom-colors: none;
+  -moz-border-image: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  border-color: #EEEEEE -moz-use-text-color #FFFFFF;
+  border-style: solid none;
+  border-width: 1px 0;
+  margin: 18px 0;
+}
+
+/* MEDIA */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+@media (max-width: 767px) {
+  .card{
+    width:75%;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-default .navbar-nav>li>a{
+    float: left;
+    padding:0 30px;
+  }
+  .card{
+    width:100%;
+  }
+
+}
+
+
