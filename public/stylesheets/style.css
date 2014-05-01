@@ -78,6 +78,11 @@ hr {
   margin: 18px 0;
 }
 
+.btn{
+  background:none;
+  font-size: 14px;
+  color:#a90329;
+}
 /* MEDIA */
 
 @media (min-width: 992px) and (max-width: 1199px) {

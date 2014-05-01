@@ -24,8 +24,25 @@
         </div>
       </div>
     </div>
+  <div id ="header">
+  </div>
   <div id ="container">
    {% block content %}{% endblock %}
   </div>
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="http://paularmstrong.github.io/swig/js/swig.min.js"></script>
+  <script>
+
+    var socket = io.connect(); // TIP: .connect with no args does auto-discovery
+    socket.on('new_card', function (new_card) {
+      title = new_card.title
+    $('#header').html("A New Card Has Been Added: " + title)
+
+    });
+  </script>
   </body>
 </html>

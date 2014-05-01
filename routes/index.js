@@ -39,7 +39,22 @@ router.post('/submit', function(req, res) {
 
   var p = new models.Card({ "title": title, "content":content, "url_name": url_name});
   p.save();
+  io.sockets.emit("new_card", {
+    title: title,
+    content: content
+  });
   res.redirect('/');
 });
 
+router.post('/:url_name/delete', function(req, res) {
+    var models = require('../models/');
+    urlName = req.params.url_name;
+    models.Card.findOneAndRemove({url_name:urlName}, function(err){
+      if(err){
+        console.log(err.message);
+      } else{
+        res.redirect('/');
+      }
+    });
+});
 module.exports = router;
