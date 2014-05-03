@@ -52,7 +52,6 @@ body {
   text-align:center;
   padding: 5px;
 }
-
 input[type="text"], .form-group textarea {
   margin-bottom: 5px;
   background-color:#fafafa;
@@ -78,8 +77,12 @@ hr {
   border-width: 1px 0;
   margin: 18px 0;
 }
-
-
+ .alert {
+  .alert-danger{
+    background-color:#000;
+    color:#FFF;
+  }
+ }
 .btn{
   background:none;
   font-size: 14px;

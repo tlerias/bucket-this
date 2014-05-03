@@ -1,6 +1,11 @@
 {% extends "layout.html" %}
 
 {% block content %}
+    {% if deleted %}
+      <div class='delete-alert'>Card is deleted!</div>
+      {% elseif updated%}
+        <div class='updated'>Card has been updated!</div>
+    {% endif %}
     {% if show_form %}
       <div class="card">
         {% include "./partials/_card_form.html" %}
@@ -15,9 +20,14 @@
           {% endif %}
           {{card.title}}
         </p>
-        <form action="/{{card.url_name}}/delete" method="POST">
+        <form action="/delete/{{card.id}}" method="POST">
           <button type="submit" class="btn pull-right">
               <p><span class="glyphicon glyphicon-remove"></span></p>
+          </button>
+        </form>
+        <form action="/edit/{{card.id}}" method="POST">
+          <button type="submit" class="btn pull-right">
+              <p><span class="glyphicon glyphicon-pencil"></span></p>
           </button>
         </form>
 

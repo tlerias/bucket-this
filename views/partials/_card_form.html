@@ -1,9 +1,10 @@
-<form action="/submit" method="POST">
+<form {% if card%}action="/edit_submit/{{card._id.toString()}}"{% else%}action="/add/submit"{% endif%} method="POST">
+
   <div class="form-group">
-    <p class="pull-left lead title">Create New</p>
+    <p class="pull-left lead title">{% if card%} Edit Card {%else%}Create New {%endif%}</p>
     <p class="pull-right"><a href="/"><span class="glyphicon glyphicon-remove"></span></a></p>
-    <input name="cardTitle" type="text" id="title_field" class="form-control" placeholder="Add Title"/>
-    <textarea class="form-control" name="cardContent" rows="12" id="content_field" placeholder="Add Description..."></textarea>
+    <input name="cardTitle" type="text" id="title_field" class="form-control" {% if card%}value="{{card.title}}" {%else%} placeholder="Add Title"{% endif%}/>
+    <textarea class="form-control" name="cardContent" rows="12" id="content_field" {%if !card%}placeholder="Add Description..." {%endif%}>{% if card %}{{card.content}}{% endif %}</textarea>
   </div>
-  <input type="submit" class ="btn btn-default" value="Add" />
+  <input type="submit" class ="btn btn-default" value="{% if card %}Edit Card{%else%}Add{% endif %}" />
 </form>
